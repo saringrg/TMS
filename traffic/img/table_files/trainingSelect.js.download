@@ -1,0 +1,11 @@
+$(document).ready(function(){
+	document.querySelectorAll('#deposit-select').forEach(select =>{
+		select.addEventListener('change',function() {
+		window.location = select.value
+		// var url = $(this).val(); // get selected value
+        //   if (url) { // require a URL
+        //       window.location = url; // redirect
+        //   }
+		});
+	})
+})

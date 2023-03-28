@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vehicle Registration Form</title>
+	<!-- Link Bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		/* Add some custom styling */
+		label {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Vehicle Registration Form</h2>
+        <form action="create_pdf.php" method="POST">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" class="form-control" name="name" placeholder="Enter your name">
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" name="email" placeholder="Enter your email">
+			</div>
+			<div class="form-group">
+				<label for="date">Date (yyyy-mm-dd):</label>
+				<input type="text" class="form-control" name="date" placeholder="Enter date (yyyy-mm-dd)" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+			</div>
+			<div class="form-group">
+				<label for="location">Location:</label>
+				<input type="text" class="form-control" name="location" placeholder="Enter location">
+			</div>
+			<div class="form-group">
+				<label for="vehicle-number">Vehicle Number:</label>
+				<input type="text" class="form-control" name="vehicle_number" placeholder="Enter vehicle number">
+			</div>
+			<div class="form-group">
+				<label for="license-number">License Number:</label>
+				<input type="text" class="form-control" name="license_number" placeholder="Enter license number">
+			</div>
+			<div class="form-group">
+				<label for="category">Category:</label>
+				<select class="form-control" name="category">
+					<option>Car</option>
+					<option>Motorcycle</option>
+					<option>Truck</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="police-name">Police Name:</label>
+				<input type="text" class="form-control" name="police_name" placeholder="Enter police name">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<!-- Link Bootstrap JavaScript library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
