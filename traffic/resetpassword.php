@@ -17,14 +17,14 @@ $email = $_POST['email'];
 $new_password = $_POST['new_password'];
 
 // Query database for user with matching email
-$sql = "SELECT * FROM traffic WHERE email='$email'";
+$sql = "SELECT * FROM user WHERE email='$email'";
 $result = $conn->query($sql);
 
 // If email matches a user in the database, update their password
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $user_id = $row['id'];
-    $sql = "UPDATE traffic SET password='$new_password' WHERE id='$user_id'";
+    $sql = "UPDATE user SET password='$new_password' WHERE id='$user_id'";
     if ($conn->query($sql) === TRUE) {
         echo '<script>alert("Password updated successfully.");</script>';
         // redirect to login page
