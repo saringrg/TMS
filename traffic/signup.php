@@ -3,7 +3,7 @@
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $license = $_POST['license'];
+    $batchnumber = $_POST['batchnumber'];
 
 	// Database connection
 	$conn = new mysqli('localhost','root','','tms');
@@ -11,8 +11,8 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("insert into user(fullname, email, password, license) values(?, ?, ?, ?)");
-		$stmt->bind_param("sssi", $fullname, $email, $password, $license);
+		$stmt = $conn->prepare("insert into traffic(fullname, email, password, batchnumber) values(?, ?, ?, ?)");
+		$stmt->bind_param("sssi", $fullname, $email, $password, $batchnumber);
 		$execval = $stmt->execute();
 		$stmt->close();
 		$conn->close();
