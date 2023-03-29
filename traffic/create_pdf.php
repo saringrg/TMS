@@ -97,18 +97,17 @@ try {
     $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
     $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
 
-    // // Send the email
-    // $mail->send();
+    // Send the email
+    $mail->send();
 
-    // // show pop-up message
-    // echo '<script>alert("Message has been sent!");</script>';
-    // // redirect to login page
-    // echo '<script>window.location.href = "trafficdash.html";</script>';
+    // show pop-up message
+    echo '<script>alert("Message has been sent!");</script>';
+    // redirect to login page
+    echo '<script>window.location.href = "trafficdash.html";</script>';
 
     //echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
 
 ?>
