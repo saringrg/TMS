@@ -76,4 +76,38 @@ $pdf_data = $pdf->Output('S');
 // Create a new PHPMailer instance
 $mail = new PHPMailer(true);
 
+try {
+    // Set the email parameters
+    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+    $mail->isSMTP();                                            // Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = '';                 // SMTP username
+    $mail->Password   = '';                   // SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    //$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+    // Set the email content
+    $mail->setFrom('', 'TMS');
+    $mail->addAddress($email);
+    $mail->addStringAttachment($pdf_data, 'eChit.pdf');
+    $mail->isHTML(true);
+    $mail->Subject = 'eChit details';
+    $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
+    $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
+
+    // Send the email
+    $mail->send();
+
+    // show pop-up message
+    echo '<script>alert("Message has been sent!");</script>';
+    // redirect to login page
+    echo '<script>window.location.href = "trafficdash.html";</script>';
+
+    //echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
 ?>
