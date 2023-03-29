@@ -43,3 +43,37 @@ if($conn->connect_error){
     }
 }
 
+// Create a new PDF instance
+$pdf = new FPDF();
+
+// Add a page to the PDF
+$pdf->AddPage();
+
+// Set the font for the document
+$pdf->SetFont('Arial', 'B', 16);
+
+// Add the title to the document
+$pdf->Cell(0, 10, 'eChit', 0, 1, 'C');
+
+// Set the font for the document
+$pdf->SetFont('Arial', '', 12);
+
+// Add the form data to the document
+$pdf->Cell(0, 10, 'Name: ' . $name, 0, 1);
+$pdf->Cell(0, 10, 'Email: ' . $email, 0, 1);
+$pdf->Cell(0, 10, 'Date: ' . $date, 0, 1);
+$pdf->Cell(0, 10, 'Vehicle Number: ' . $vehicle_number, 0, 1);
+$pdf->Cell(0, 10, 'License Number: ' . $license_number, 0, 1);
+$pdf->Cell(0, 10, 'Fine Category: ' . $fine_category, 0, 1);
+$pdf->Cell(0, 10, 'Fine Box: ' . $fine_box, 0, 1);
+$pdf->Cell(0, 10, 'Location: ' . $location, 0, 1);
+$pdf->Cell(0, 10, 'Traffic Station: ' . $traffic_station, 0, 1);
+$pdf->Cell(0, 10, 'Police Name: ' . $police_name, 0, 1);
+
+// Output the PDF
+$pdf_data = $pdf->Output('S');
+
+// Create a new PHPMailer instance
+$mail = new PHPMailer(true);
+
+?>
