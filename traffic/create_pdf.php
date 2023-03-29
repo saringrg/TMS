@@ -89,8 +89,8 @@ try {
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     // Set the email content
-    // $mail->setFrom('', 'TMS');
-    // $mail->addAddress($email);
+    $mail->setFrom('', 'TMS');
+    $mail->addAddress($email);
     // $mail->addStringAttachment($pdf_data, 'eChit.pdf');
     // $mail->isHTML(true);
     // $mail->Subject = 'eChit details';
