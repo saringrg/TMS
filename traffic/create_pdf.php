@@ -89,25 +89,26 @@ try {
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     // Set the email content
-    $mail->setFrom('', 'TMS');
-    $mail->addAddress($email);
-    $mail->addStringAttachment($pdf_data, 'eChit.pdf');
-    $mail->isHTML(true);
-    $mail->Subject = 'eChit details';
-    $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
-    $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
+    // $mail->setFrom('', 'TMS');
+    // $mail->addAddress($email);
+    // $mail->addStringAttachment($pdf_data, 'eChit.pdf');
+    // $mail->isHTML(true);
+    // $mail->Subject = 'eChit details';
+    // $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
+    // $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
 
-    // Send the email
-    $mail->send();
+    // // Send the email
+    // $mail->send();
 
-    // show pop-up message
-    echo '<script>alert("Message has been sent!");</script>';
-    // redirect to login page
-    echo '<script>window.location.href = "trafficdash.html";</script>';
+    // // show pop-up message
+    // echo '<script>alert("Message has been sent!");</script>';
+    // // redirect to login page
+    // echo '<script>window.location.href = "trafficdash.html";</script>';
 
     //echo 'Message has been sent';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
 
 ?>
