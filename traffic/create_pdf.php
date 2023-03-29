@@ -91,11 +91,11 @@ try {
     // Set the email content
     $mail->setFrom('', 'TMS');
     $mail->addAddress($email);
-    // $mail->addStringAttachment($pdf_data, 'eChit.pdf');
-    // $mail->isHTML(true);
-    // $mail->Subject = 'eChit details';
-    // $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
-    // $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
+    $mail->addStringAttachment($pdf_data, 'eChit.pdf');
+    $mail->isHTML(true);
+    $mail->Subject = 'eChit details';
+    $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
+    $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
 
     // // Send the email
     // $mail->send();
