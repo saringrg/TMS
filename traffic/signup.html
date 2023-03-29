@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Sign Up Form</title>
+    <style>
+      body {
+      background-image: url("https://trbahadurpur.com/wp-content/uploads/2021/01/background-5.jpg");
+    }
+    </style>
+  </head>
+  <body>
+    <br> 
+    <div class="container mb-4">
+      <div class="row float-left">
+        <img src="logo.jpg" style="width:100px; object-fit: fill; border-radius: 100px;" alt="No Image">
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="card" style="border-radius: 10px;">
+            <div class="card-body">
+              <h2 class="card-title text-center mb-4">Sign Up</h2>
+                <form action="signup.php" method="post">
+                  <div class="form-group">
+                    <label for="">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Enter full name" name="fullname" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="batchnumber">Batch Number</label>
+                    <input type="text" class="form-control" id="license" placeholder="Enter license number" name="batchnumber" required>
+                  </div>
+                  <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="success-message" class="alert alert-success mt-4" role="alert" style="display: none;">
+      Registration Successful!
+    </div>
+  </body>
+</html>

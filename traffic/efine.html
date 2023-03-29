@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eFine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <style>
+    .fine {
+      height: 400px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      background-image: url("https://trbahadurpur.com/wp-content/uploads/2021/01/background-5.jpg");    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-light fixed-top">
+    <div class=" ps-5 justify-content-center align-items-center container-fluid">
+      <img src="logo.jpg" class="rounded-circle" alt="logo" style="height:65px;">
+      <a class="navbar-brand" href="#">TMS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ps-2">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="trafficdash.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="efine.html">E-Chit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="notice1.html">Notice<span class="badge bg-danger"></span></a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="trafficrule.html">Traffic Rules</a></li>
+              <li><a class="dropdown-item" href="trafficsign.html">Traffic Signs</a></li>
+              <li><a class="dropdown-item" href="#">Traffic Helplines</a></li>
+              <li><a class="dropdown-item" href="#">Complain</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="dropdown text-end px-5 mx-4">
+      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <img src="img/sachin.jpg" alt="profile" width="38" height="38" class="rounded-circle">
+      </a>
+      <ul class="dropdown-menu text-small">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="login.html">Sign out</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="alert alert-primary justify-content-center text-center" role="alert">
+    Welcome To e-Cheat
+  </div>
+
+
+  <section class=" fine vh-100 bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body ">
+                <h2 class="text-center mb-3"><b>E-Chit</b></h2>
+
+                <form action="create_pdf.php" method="POST">
+                  <div class=" form-outline mb-4">
+                    <input type="text" name="name" id="form3Example1cg" class="form-control" placeholder="Full Name" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="email" name="email" id="form3Example3cg" class="form-control" placeholder="Email" />
+                  </div>
+
+                  <div class="md-form md-outline input-with-post-icon datepicker mb-4">
+                    <input placeholder="Select date" type="date" name="date" id="example" class="form-control">
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="vehicle_number" id="form3Example4cg" class="form-control" placeholder="Vehicle Number" />
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="license_number" id="form3Example4cdg" class="form-control " placeholder="Licence Number" />
+
+                  </div>
+
+                  <div class="form-group mb-4">
+                    <select name="fine_category" id="usertype" class="form-control" aria-label="Default select example">
+                      <option selected>Fine Category</option>
+                      <option>not wearing helmet while riding motorbike </option>
+                      <option>carrying passengers on the roof</option>
+                      <option>carrying load beyond capacity</option>
+                      <option>for using vehicles for different purposes without permit</option>
+                      <option>reckless driving </option>
+                      <option>driving under the influence of alcohol </option>
+                      <option> parking vehicles in public places in a haphazard manner</option>
+                      <option> driving without licence or letting someone without licence drive</option>
+                      <option>involvement in accidents or fleeing after accident</option>
+                      <option>driving on the wrong lane </option>
+                      <option>driving a public vehicle without route permit </option>
+                
+                    </select>
+                  </div>
+                  
+                  <div class="form-outline mb-4">
+                    <input type="text" name="fine_box" id="fineboxinput" class="form-control" placeholder="Fine Box" />
+                  </div>
+
+                  <div class="form-group mb-4">
+                    <select id="usertype" class="form-control" name="location" aria-label="Default select example"
+                      placeholder="District">
+                      <option selected>District</option>
+                      <option>Kathmandu</option>
+                      <option>Bhaktapur</option>
+                      <option>Lalitpur</option>
+
+                    </select>
+                  </div>
+                  <div class="form-group mb-4">
+                    <select name="traffic_station" id="usertype" class="form-control" aria-label="Default select example"
+                      placeholder="Traffic Station">
+                      <option selected>Traffic Station</option>
+                      <option>Naxal</option>
+                      <option>Chabahil</option>
+                      <option>Boudha</option>
+                      <option>Koteshwor</option>
+                      <option>lajhimpat</option>
+                      <option>sano thimi</option>
+                      <option>salla ghari</option>
+                      <option>dharbar square</option>
+                      <option>Radhe Radhe</option>
+                      <option>Thimi</option>
+                      <option>Satdhobato</option>
+                      <option>guwarkhu</option>
+                      <option>Yakanta kuna</option>
+                      <option>Lakuri bhanjhyang</option>
+                      <option>Lagankhel</option>
+                    </select>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" name="police_name" id="form3Example4cg" class="form-control "
+                      placeholder="Traffic Police Name" />
+                  </div>
+
+                  <div class="d-flex justify-content-center">
+                    <button type="submit"
+                      class="btn btn-primary btn-lg gradient-custom-4  text-light " style="background-color: blue;">Submit</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="d-flex flex-column flex-sm-row justify-content-center">
+    <p class="mb-4">© 2023 TMS, All rights reserved.</p>
+    <ul class="list-unstyled d-flex mb-4">
+
+      <li class="ms-3"><a href="#"><i class="bi bi-facebook" width="100" height="100"></i><span
+            class="visually-hidden">Facebook
+            group</span></a></li>
+      <li class="ms-3"><a href="#"><i class="bi bi-instagram"></i><span class="visually-hidden">Instagram
+            page</span></a></li>
+      <li class="ms-3"><a href="#"><i class="bi bi-twitter"></i><span class="visually-hidden">Twitter
+            account</span></a></li>
+      <li class="ms-3"><a href="#"><i class="bi bi-youtube"></i><span class="visually-hidden">Youtube
+            channel</span></a></li>
+    </ul>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+    <script> 
+        // get the HTML elements
+              const fineCategory = document.getElementById("usertype");
+              const fineBox = document.getElementById("form-outline mb-4");
+              const fineAmountinput =document.getElementById("fineboxinput");
+              console.log({fineCategory});
+
+              // add event listener to fine category dropdown
+              fineCategory.addEventListener("change", () => {
+
+                // console.log({selectedCategory});
+              const selectedCategory = fineCategory.value;
+              console.log({selectedCategory});
+
+              // set fine amount based on selected category
+              let fineAmount = 0;
+              switch (selectedCategory) {
+                  case "not wearing helmet while riding motorbike":
+                  fineAmount = 500;
+                  break;
+                  case "carrying passengers on the roof":
+                  fineAmount = 1500;
+                  break;6
+                  case "carrying load beyond capacity":
+                  fineAmount = 1000;
+                  break;
+                  case "for using vehicles for different purposes without permit":
+                  fineAmount = 500;
+                  break;
+                  case "reckless driving":
+                  fineAmount = 1000;
+                  break;
+                  case "driving under the influence of alcohol":
+                  fineAmount = 500;
+                  break;
+                  case "parking vehicles in public places in a haphazard manner":
+                  fineAmount =1000;
+                  break;
+                  case "driving without licence or letting someone without licence drive":
+                  fineAmount =1000;
+                  break;
+                  case "involvement in accidents or fleeing after accident":
+                  fineAmount =1500;
+                  break;
+                  case "driving on the wrong lane":
+                  fineAmount =1500;
+                  break;
+                  case"driving a public vehicle without route permit":
+                  fineAmount =1500;
+                  break;
+                //  case "":
+                //  fineAmount=500;
+                //   break;
+                //   case "13":
+                //   fineAmount=1500;
+                //   break;
+                //   case "14":
+                //   fineAmount=1500;
+                //   break;
+                  default:
+                  fineAmount = 0;
+                  
+              }
+              console.log(fineAmount);
+
+            fineAmountinput.value=fineAmount;
+              });
+
+      </script>
+</body>
+
+</html>
