@@ -20,7 +20,15 @@ $new_password = $_POST['new_password'];
 $sql = "SELECT * FROM user WHERE email='$email'";
 $result = $conn->query($sql);
 
-
+// If email matches a user in the database, update their password
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $user_id = $row['id'];
+    $sql = "UPDATE user SET password='$new_password' WHERE id='$user_id'";
+    
+} else {
+    echo "<script>alert('Email not found in database.'); window.location.href='resetpassword.html';</script>";
+}
 
 $conn->close();
 ?>
