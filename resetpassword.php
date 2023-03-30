@@ -25,7 +25,14 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $user_id = $row['id'];
     $sql = "UPDATE user SET password='$new_password' WHERE id='$user_id'";
-    
+    if ($conn->query($sql) === TRUE) {
+        echo '<script>alert("Password updated successfully.");</script>';
+        // redirect to login page
+        echo '<script>window.location.href = "login.html";</script>';
+
+    } else {
+        echo "<script>alert('Error updating password'); window.location.href='resetpassword.html';</script>";
+    }
 } else {
     echo "<script>alert('Email not found in database.'); window.location.href='resetpassword.html';</script>";
 }
