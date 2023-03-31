@@ -13,7 +13,10 @@
 	} else {
 		$stmt = $conn->prepare("insert into traffic(fullname, email, password, batchnumber) values(?, ?, ?, ?)");
 		$stmt->bind_param("sssi", $fullname, $email, $password, $batchnumber);
-		
+		$execval = $stmt->execute();
+		$stmt->close();
+		$conn->close();
+
 		if($execval) {
 			// show pop-up message
 			echo '<script>alert("Account created successfully!");</script>';
