@@ -26,7 +26,7 @@ if($conn->connect_error){
     die("Connection Failed : ". $conn->connect_error);
 } else {
     $stmt = $conn->prepare("insert into echit(name, email, date, vehicle_number, license_number, fine_category, fine_box, location, traffic_station, police_name) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssiisisss", $name, $email, $date, $vehicle_number, $license_number, $fine_category, $fine_box, $location, $traffic_station, $police_name);
+    $stmt->bind_param("ssssisisss", $name, $email, $date, $vehicle_number, $license_number, $fine_category, $fine_box, $location, $traffic_station, $police_name);
     $execval = $stmt->execute();
     $stmt->close();
     $conn->close();
