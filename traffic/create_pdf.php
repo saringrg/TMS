@@ -53,7 +53,7 @@ $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);
 
 // Add the title to the document
-$pdf->Cell(0, 10, 'eChit', 0, 1, 'C');
+$pdf->Cell(0, 10, 'E-Chit', 0, 1, 'C');
 
 // Set the font for the document
 $pdf->SetFont('Arial', '', 12);
@@ -91,11 +91,11 @@ try {
     // Set the email content
     $mail->setFrom('np03cs4a210050@heraldcollege.edu.np', 'TMS');
     $mail->addAddress($email);
-    $mail->addStringAttachment($pdf_data, 'eChit.pdf');
+    $mail->addStringAttachment($pdf_data, 'E-Chit.pdf');
     $mail->isHTML(true);
     $mail->Subject = 'eChit details';
-    $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
-    $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
+    $mail->Body    = 'Please find attached E-Chit submitted by Traffic Management System';
+    $mail->AltBody = 'Please find attached E-Chit submitted by Traffic Management System';
 
     // Send the email
     $mail->send();
