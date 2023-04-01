@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- Custom CSS -->
+
+  <!--CSS style start-->
   <style type="text/css">
-    
     .login-form {
       width: 365px;
-      margin-top: 25px;
+      margin-top: 25px; 
       margin-left: 30px;
       margin-right: 30px;
       font-size: 15px;
@@ -54,41 +54,38 @@
       background-size: cover;
       overflow: hidden;
     }
-
- 
   </style>
 </head>
 <body>
   <div class="logo mt-4 ml-4">
-    <img src="logo.jpg" class="rounded-circle ms-3" alt="logo" style="height:100px;">
+    <img src="logo.jpg" class="rounded-circle ms-3" alt="logo" style="height:100px;"> <!--adding logo-->
   </div>
-
-  <div class="container-fluid h-custom ">
-    <div class="row d-flex justify-content-center align-items-center h-100 ">
+ <!--login form start-->
+  <div class="container-fluid h-custom "> <!--creating container-->
+    <div class="row d-flex justify-content-center align-items-center h-100 ">  <!--creating horizontal row container and text are center aligned-->
       <div class="col-md-9 col-lg-6 col-xl-5 mx-4">
         <img src="https://myrepublica.nagariknetwork.com/uploads/media/traffic-police_20200321094134.jpg"
-        class="img-fluid" alt="Sample image" style="width: 1500px; height: 400px;border-radius: 10px;">
+        class="img-fluid" alt="Sample image" style="width: 1500px; height: 400px;border-radius: 10px;"> <!--adding image-->
     </div>
-      
-  
   <div class="login-form">
     <form class="login-form" action="login.php" method="post">
       <h2 class="text-center mb-4"> <b> Login </b></h2> 
       <div class="form-group">
-        <input type="email" name="email" class="form-control" placeholder="Email/Mobile" required="required">
+        <input type="email" name="email" class="form-control" placeholder="Email/Mobile" required="required"> <!--inputbox of email which is required-->
       </div>
       <div class="form-group">
-        <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+        <input type="password" name="password" class="form-control" placeholder="Password" required="required"> <!--inputbox of password which is required-->
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        <button type="submit" class="btn btn-primary btn-block">Log in</button> <!--login button-->
       </div>
       <div class="clearfix">
-        <a href="resetpassword.html" class="float-left mb-4">Forgot Password?</a>
+        <a href="resetpassword.html" class="float-left mb-4">Forgot Password?</a> <!--forgot password-->
       </div>
-      <p class="text-center">Don't have an account? <a href="signup.html">Register here</a></p>
+      <p class="text-center">Don't have an account? <a href="signup.html">Register here</a></p> <!--for new register-->
     </form>
   </div>
+<!--login form end-->
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <!-- Bootstrap JS -->
