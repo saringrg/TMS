@@ -55,7 +55,7 @@ td {
 .side-menu {
     padding-top: 10px;
     position: fixed;
-    background: #88ACBB;
+    background: #1F4B8C;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -77,8 +77,8 @@ td {
     align-items: center;
 }
 .side-menu li:hover {
-    background: rgb(128, 125, 125);
-    color: #231e1e;
+    background: #112E56;
+    color: #f4efef;
 }
 .container {
     position: absolute;
@@ -93,7 +93,7 @@ td {
     right: 0;
     width: 80vw;
     height: 10vh;
-    background: #D7E7F4;
+    background: #1F4B8C;
     display: flex;
     align-items: center;
     justify-content: center;
