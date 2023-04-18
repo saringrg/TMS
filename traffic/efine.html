@@ -20,12 +20,7 @@
       height: 400px;
       margin-bottom: 30px;
       padding-bottom: 20px;
-    }
-    body {
-      padding-top: 81px;
-    }
-    .video{
-      padding-left: 150px;
+      background-image: url("https://trbahadurpur.com/wp-content/uploads/2021/01/background-5.jpg");
     }
   </style>
 </head>
@@ -177,32 +172,100 @@
  
                   <div class="form-group mb-4">
                     <select name="fine_category"
-                      id="usertype"
-                      class="form-control"
-                      aria-label="Default select example">
-                      <option selected>fineCategory</option>
-                      <option>not wearing helmet while riding motorbike </option>
-                      <option>carrying passengers on the roof</option>
-                      <option>carrying load beyond capacity</option>
-                      <option>for using vehicles for different purposes without permit</option>
-                      <option>reckless driving </option>
-                      <option>driving under the influence of alcohol </option>
-                      <option> parking vehicles in public places in a haphazard manner</option>
-                      <option> driving without licence or letting someone without licence drive</option>
-                      <option>involvement in accidents or fleeing after accident</option>
-                      <option>driving on the wrong lane </option>
-                      <option>driving a public vehicle without route permit </option>
- 
+                            id="fineCategory"
+                            class="form-control"
+                            aria-label="Default select example">
+                      <option selected disabled>Fine category</option>
+                      <option>Not wearing helmet while riding motorbike</option>
+                      <option>Carrying passengers on the roof</option>
+                      <option>Carrying load beyond capacity</option>
+                      <option>Using vehicles for different purposes without permit</option>
+                      <option>Reckless driving</option>
+                      <option>Driving under the influence of alcohol</option>
+                      <option>Parking vehicles in public places in a haphazard manner</option>
+                      <option>Driving without licence or letting someone without licence drive</option>
+                      <option>Involvement in accidents or fleeing after accident</option>
+                      <option>Driving on the wrong lane</option>
+                      <option>Driving a public vehicle without route permit</option>
                     </select>
                   </div>
- 
+                  
                   <div class="form-outline mb-4">
                     <input type="text"
-                      name="fine_box"
-                      id="fineboxinput"
-                      class="form-control"
-                      placeholder="finebox" />
+                            name="fine_box"
+                            id="fineBoxInput"
+                            class="form-control"
+                            placeholder="Fine amount" />
                   </div>
+                  
+                  <div class="form-outline mb-4">
+                    <input type="text"
+                            name="notice"
+                            id="noticeInput"
+                            class="form-control"
+                            placeholder="Notice" />
+                  </div>
+                  
+                  <script>
+                    const fineCategory = document.getElementById("fineCategory");
+                    const fineBoxInput = document.getElementById("fineBoxInput");
+                    const noticeInput = document.getElementById("noticeInput");
+                  
+                    fineCategory.addEventListener("change", () => {
+                      const selectedCategory = fineCategory.value;
+                      let fineAmount = 0;
+                      let requiresNotice = false;
+                  
+                      switch (selectedCategory) {
+                        case "Not wearing helmet while riding motorbike":
+                          fineAmount = 500;
+                          requiresNotice = false;
+                          break;
+                        case "Carrying passengers on the roof":
+                          fineAmount = 1500;
+                          requiresNotice = false;
+                          break; 
+                        case "Carrying load beyond capacity":
+                          fineAmount = 1000;
+                          break;
+                        case "Using vehicles for different purposes without permit":
+                          fineAmount = 500;
+                          break;
+                        case "Reckless driving":
+                          fineAmount = 1000;
+                          requiresNotice = true;
+                          break;
+                        case "Driving under the influence of alcohol":
+                          fineAmount = 500;
+                          requiresNotice = false;
+                          break;
+                        case "Parking vehicles in public places in a haphazard manner":
+                          fineAmount = 1000;
+                          break;
+                        case "Driving without licence or letting someone without licence drive":
+                          fineAmount = true;
+                          break;
+                        case "Involvement in accidents or fleeing after accident":
+                          fineAmount = 1500;
+                          requiresNotice = true;
+                          break;
+                        case "Driving on the wrong lane":
+                          fineAmount = 1500;
+                          requiresNotice = true;
+                          break;
+                        case "Driving a public vehicle without route permit":
+                          fineAmount = 1500;
+                          requiresNotice = true;
+                          break;
+                        default:
+                          fineAmount = 0;
+                      }
+                  
+                      fineBoxInput.value = fineAmount;
+                      noticeInput.value = requiresNotice ? "Attend the class and proceed to payment " : "Proceed to payment ";
+                    });
+                  </script>
+                  
  
                   <div class="form-group mb-4">
                     <select id="district_selection"
@@ -232,8 +295,8 @@
                       id="form3Example4cg"
                       class="form-control "
                       placeholder="Traffic police Name" />
-                  </div>
- 
+
+
                   <div class="d-flex justify-content-center">
                     <button type="submit"
                       class="btn btn-primary btn-lg gradient-custom-4  text-light "
@@ -273,11 +336,11 @@
  
   <script>
     // get the HTML elements
-    const fineCategory = document.getElementById("usertype");
+    //const fineCategory = document.getElementById("usertype");
     const district_selection_input = document.getElementById('district_selection')
     const traffic_station_selection_input = document.getElementById('traffic_station_selection')
-    const fineBox = document.getElementById("form-outline mb-4");
-    const fineAmountinput = document.getElementById("fineboxinput");
+    // const fineBox = document.getElementById("form-outline mb-4");
+    // const fineAmountinput = document.getElementById("fineboxinput");
  
     // district selection
     district_selection.addEventListener('change', (event) => {
@@ -326,57 +389,7 @@
       }
     }
  
-    // add event listener to fine category dropdown
-    fineCategory.addEventListener("change", () => {
- 
-      // console.log({selectedCategory});
-      const selectedCategory = fineCategory.value;
-      console.log({ selectedCategory });
- 
-      // set fine amount based on selected category
-      let fineAmount = 0;
-      switch (selectedCategory) {
-        case "not wearing helmet while riding motorbike":
-          fineAmount = 500;
-          break;
-        case "carrying passengers on the roof":
-          fineAmount = 1500;
-          break; 
-        case "carrying load beyond capacity":
-          fineAmount = 1000;
-          break;
-        case "for using vehicles for different purposes without permit":
-          fineAmount = 500;
-          break;
-        case "reckless driving":
-          fineAmount = 1000;
-          break;
-        case "driving under the influence of alcohol":
-          fineAmount = 500;
-          break;
-        case "parking vehicles in public places in a haphazard manner":
-          fineAmount = 1000;
-          break;
-        case "driving without licence or letting someone without licence drive":
-          fineAmount = 1000;
-          break;
-        case "involvement in accidents or fleeing after accident":
-          fineAmount = 1500;
-          break;
-        case "driving on the wrong lane":
-          fineAmount = 1500;
-          break;
-        case "driving a public vehicle without route permit":
-          fineAmount = 1500;
-          break;
-        default:
-          fineAmount = 0;
- 
-      }
-      console.log(fineAmount);
- 
-      fineAmountinput.value = fineAmount;
-    });
+  
  
   </script>
 </body>
