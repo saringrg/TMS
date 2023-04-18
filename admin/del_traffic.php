@@ -19,7 +19,7 @@ if (isset($_POST["id"])) {
   // Construct the DELETE query and execute it
   $sql = "DELETE FROM traffic WHERE id = $id";
   if (mysqli_query($conn, $sql)) {
-    echo "<script>alert('Record deleted sucessfully'); window.location.href='dash.php';</script>";
+    echo "<script>alert('Record deleted sucessfully'); window.location.href='traffic2.php';</script>";
   } else {
     echo "Error deleting record: " . mysqli_error($conn);
   }
