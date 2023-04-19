@@ -48,7 +48,7 @@ td form {
             <h1 class="tm">TMS</h1>
         </div><br><br>
         <ul>
-            <a href="index.html">
+            <a href="index.php">
                 <li><img src="img/dashboard (2).png" alt="">&nbsp; <span>Dashboard</span> </li>
             </a>
             <a href="user.php">
