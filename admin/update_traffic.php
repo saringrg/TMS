@@ -14,7 +14,7 @@ if (isset($_POST["submit"])) {
   $fullname = $_POST["fullname"];
   $email = $_POST["email"];
   $password = $_POST["password"];
-  $batchnumber = $_POST["batchnumber"];
+  $batchnumber = $_POST["batchnumber"]; 
 
   // Update data in the "traffic" table
   $sql = "UPDATE traffic SET fullname='$fullname', email='$email', password='$password', batchnumber='$batchnumber' WHERE id=$id";

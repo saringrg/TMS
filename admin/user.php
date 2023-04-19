@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-    <title>traffic details</title>
+    <title>user details</title>
     <style>
         .delete-btn, .update-btn {
   color: white;
@@ -46,7 +46,7 @@ td form {
             <img src="img/logo.jpg" class="rounded-circle" alt="logo" style="height:65px; border-radius: 50px;">&nbsp;
 
             <h1 class="tm">TMS</h1>
-        </div><br>
+        </div><br><br>
         <ul>
             <a href="index.html">
                 <li><img src="img/dashboard (2).png" alt="">&nbsp; <span>Dashboard</span> </li>
@@ -71,7 +71,7 @@ td form {
         <div class="header">
             <div class="nav">
                 <div class="search">
-                      
+                   
                 </div>
                 <div class="user">
                     <a href="#" class="bt"></a>
@@ -86,10 +86,10 @@ td form {
         <div class="content-2">
             <div class="recent-payments">
                 <div class="title">
-                    <h2>Traffic Details</h2>
-                    <a href="signup.html" class="btn1">Add Traffic</a>
+                    <h2 class="text" >User Details</h2>
+                    
                 </div>
-      <table>
+                <table>
       <tr>
         <th>ID</th>
         <th>Full Name</th>
@@ -107,8 +107,8 @@ td form {
           die("Connection failed: " . mysqli_connect_error());
         }
         
-        // Retrieve data from the "traffic" table
-        $sql = "SELECT * FROM traffic";
+        // Retrieve data from the "user" table
+        $sql = "SELECT * FROM user";
         $result = mysqli_query($conn, $sql);
         
         // Display data in the table
@@ -120,14 +120,14 @@ td form {
                     <td>" . $row["fullname"] . "</td>
                     <td>" . $row["email"] . "</td>
                     <td>" . $row["password"] . "</td>
-                    <td>" . $row["batchnumber"] . "</td>
+                    <td>" . $row["license"] . "</td>
                     <td>
                   <form method='post' action='update.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
                   </form>
                   
-                  <form method='post' action='del_traffic.php'>
+                  <form method='post' action='del_user.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='delete' value='Delete' class='delete-btn'>
                   </form>

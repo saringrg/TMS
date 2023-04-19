@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-    <title>traffic details</title>
+    <title>user details</title>
     <style>
         .delete-btn, .update-btn {
   color: white;
@@ -46,7 +46,7 @@ td form {
             <img src="img/logo.jpg" class="rounded-circle" alt="logo" style="height:65px; border-radius: 50px;">&nbsp;
 
             <h1 class="tm">TMS</h1>
-        </div><br>
+        </div><br><br>
         <ul>
             <a href="index.html">
                 <li><img src="img/dashboard (2).png" alt="">&nbsp; <span>Dashboard</span> </li>
@@ -71,7 +71,7 @@ td form {
         <div class="header">
             <div class="nav">
                 <div class="search">
-                      
+                   
                 </div>
                 <div class="user">
                     <a href="#" class="bt"></a>
@@ -86,17 +86,25 @@ td form {
         <div class="content-2">
             <div class="recent-payments">
                 <div class="title">
-                    <h2>Traffic Details</h2>
-                    <a href="signup.html" class="btn1">Add Traffic</a>
+                    <h2 class="text" >E-Chit Details</h2>
+                    
                 </div>
-      <table>
+                <table>
       <tr>
         <th>ID</th>
         <th>Full Name</th>
         <th>Email</th>
-        <th>Password</th>
-        <th>Batch Number</th>
-        <th>Action</th>
+        <th>Date</th>
+        <th>Vehicle Number</th>
+        <th>License Number</th>
+        <th>Fine Category</th>
+        <th>Fine Box</th>
+        <th>Location</th>
+        <th>Traffic Station</th>
+        <th>Police Name</th>
+        <th>Notice</th>
+        <th>Chit Number</th>
+
       </tr>
       <?php
         // Connect to MySQL database
@@ -108,7 +116,7 @@ td form {
         }
         
         // Retrieve data from the "traffic" table
-        $sql = "SELECT * FROM traffic";
+        $sql = "SELECT * FROM echit";
         $result = mysqli_query($conn, $sql);
         
         // Display data in the table
@@ -117,17 +125,25 @@ td form {
             // echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fullname"] . "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["batchnumber"] . "</td></tr>";
             echo "<tr>
                     <td>" . $row["id"] . "</td>
-                    <td>" . $row["fullname"] . "</td>
+                    <td>" . $row["name"] . "</td>
                     <td>" . $row["email"] . "</td>
-                    <td>" . $row["password"] . "</td>
-                    <td>" . $row["batchnumber"] . "</td>
+                    <td>" . $row["date"] . "</td>
+                    <td>" . $row["vehicle_number"] . "</td>
+                    <td>" . $row["license_number"] . "</td>
+                    <td>" . $row["fine_category"] . "</td>
+                    <td>" . $row["fine_box"] . "</td>
+                    <td>" . $row["location"] . "</td>
+                    <td>" . $row["traffic_station"] . "</td>
+                    <td>" . $row["police_name"] . "</td>
+                    <td>" . $row["notice"] . "</td>
+                    <td>" . $row["chit_number"] . "</td>
                     <td>
                   <form method='post' action='update.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
                   </form>
                   
-                  <form method='post' action='del_traffic.php'>
+                  <form method='post' action='del_echit.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='delete' value='Delete' class='delete-btn'>
                   </form>
