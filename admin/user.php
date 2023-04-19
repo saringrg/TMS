@@ -122,10 +122,6 @@ td form {
                     <td>" . $row["password"] . "</td>
                     <td>" . $row["license"] . "</td>
                     <td>
-                  <form method='post' action='update.php'>
-                    <input type='hidden' name='id' value='" . $row["id"] . "'>
-                    <input type='submit' name='update' value='Edit' class='update-btn'>
-                  </form>
                   
                   <form method='post' action='del_user.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
