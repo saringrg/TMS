@@ -95,7 +95,7 @@ td form {
         <th>Full Name</th>
         <th>Email</th>
         <th>Password</th>
-        <th>Batch Number</th>
+        <th>License Number</th>
         <th>Action</th>
       </tr>
       <?php
