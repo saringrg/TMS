@@ -122,7 +122,7 @@ td form {
                     <td>" . $row["password"] . "</td>
                     <td>" . $row["batchnumber"] . "</td>
                     <td>
-                  <form method='post' action='edit.php'>
+                  <form method='post' action='edit_traffic.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
                   </form>
