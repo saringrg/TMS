@@ -17,8 +17,8 @@
             <img src="img/logo.jpg" class="rounded-circle" alt="logo" style="height:65px; border-radius: 50px;">&nbsp;
             </a>
             <h1 class="tm">TMS</h1>
-
         </div><br>
+
         <ul>
             <a href="index.php">
            
@@ -38,12 +38,11 @@
             </a>
         </ul>
     </div>
+
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="se">
-                   
-                    
+                <div class="se">   
                 </div>
                 <div class="user">
                     <a href="#" class="bt"></a>
@@ -58,7 +57,6 @@
         <div class="content">
            <div class="heads" style="padding:20px; text-color:red"><h1>Dashboard</h1></div> 
             <div class="cards">
-
                 <a href="user.html">
                     <div class="card">
                         <div class="box">
@@ -188,7 +186,6 @@
                 </div></a>
 
             </div>
-
 
             <!--
             <div class="content-2">

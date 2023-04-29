@@ -42,14 +42,15 @@ td form {
 </head>
 
 <body>
+  
     <div class="side-menu">
         <div class="brand-name">
         <a href="index.php">
             <img src="img/logo.jpg" class="rounded-circle" alt="logo" style="height:65px; border-radius: 50px;">&nbsp;
             </a>
             <h1 class="tm">TMS</h1>
-
         </div><br><br>
+
         <ul>
             <a href="index.php">
             <li> <img src="img/dashboard1.jpg" style="height:35px; width:40px" alt="">&nbsp; <span>Dashboard</span> </li>
@@ -66,16 +67,16 @@ td form {
             <a href="">
                 <li><img src="img/lo.png" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
             </a>
+          </u>
     </div>
+
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                   
+                <div class="search">  
                 </div>
                 <div class="user">
                     <a href="#" class="bt"></a>
-
                     <div class="img-case">
                         <img src="img/user.png" alt="">
                     </div>
@@ -86,8 +87,7 @@ td form {
         <div class="content-2">
             <div class="recent-payments">
                 <div class="title">
-                    <h2 class="text" >User Details</h2>
-                    
+                    <h2 class="text" >User Details</h2>   
                 </div>
                 <table>
       <tr>
