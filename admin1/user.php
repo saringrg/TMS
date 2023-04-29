@@ -56,13 +56,13 @@ td form {
             <li> <img src="img/dashboard1.jpg" style="height:35px; width:40px" alt="">&nbsp; <span>Dashboard</span> </li>
             </a>
             <a href="user.php">
-                <li><img src="img/user1.png" style="height:45px"alt="">&nbsp;<span>User</span> </li>
+                <li><img src="img/user0.png" style="height:45px"alt="">&nbsp;<span>User</span> </li>
             </a>
             <a href="traffic2.php">
                 <li><img src="img/traffic.jpg"style="height:35px; width:40px" alt="">&nbsp;<span>Traffic</span> </li>
             </a>
             <a href="echit.php">
-                <li><img src="img/table2.png" style="height:40px; width:40px" alt="">&nbsp;<span>E-chit</span> </li>
+                <li><img src="img/table0.png" style="height:40px; width:40px" alt="">&nbsp;<span>E-chit</span> </li>
             </a>
             <a href="">
                 <li><img src="img/lo.png" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
