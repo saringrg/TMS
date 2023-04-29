@@ -1,34 +1,31 @@
 <?php
-// Connect to MySQL database
-$conn = mysqli_connect("localhost", "root", "", "tms");
+// Check if the form is submitted
+if (isset($_POST['submit'])) {
+  // Connect to the database
+  $conn = mysqli_connect("localhost", "root", "", "tms");
 
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+  // Retrieve form data
+  $id = mysqli_real_escape_string($conn, $_POST['id']);
+  $name = mysqli_real_escape_string($conn, $_POST['fullname']);
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+  $password = mysqli_real_escape_string($conn, $_POST['password']);
+  $batchnumber = mysqli_real_escape_string($conn, $_POST['batchnumber']);
 
-// Check if form is submitted
-if (isset($_POST["submit"])) {
-  // Get form data
-  $id = $_POST["id"];
-  $fullname = $_POST["fullname"];
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  $batchnumber = $_POST["batchnumber"]; 
+  // Update the data in the database
+  $query = "UPDATE traffic SET fullname='$name', email='$email', password='$password', batchnumber='$batchnumber' WHERE id='$id'";
+  $result = mysqli_query($conn, $query);
 
-  // Update data in the "traffic" table
-  $sql = "UPDATE traffic SET fullname='$fullname', email='$email', password='$password', batchnumber='$batchnumber' WHERE id=$id";
-
-  if (mysqli_query($conn, $sql)) {
-    // Redirect to dashboard with success message
-    header("Location: dash.php?msg=Record updated successfully");
-    exit();
+  // Check if the update was successful
+  if ($result) {
+    echo "<script>alert('Data updated successfully.')</script>";
+    echo "<script>window.location = 'traffic2.php'</script>";
   } else {
-    // Display error message
-    echo "Error updating record: " . mysqli_error($conn);
+    echo "<script>alert('Error updating data: " . mysqli_error($conn) . "')</script>";
+    echo "<script>window.history.back()</script>";
   }
-}
 
-// Close MySQL database connection
-mysqli_close($conn);
+
+  // Close the database connection
+  mysqli_close($conn);
+}
 ?>

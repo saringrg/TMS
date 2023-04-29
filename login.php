@@ -1,4 +1,6 @@
 <?php
+    session_start(); // add session_start() here
+
     // Retrieve form data
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -37,7 +39,7 @@
         }elseif ($stmt2_result->num_rows > 0) {
             $data = $stmt2_result->fetch_assoc();
             if($data['password'] === $password){
-                echo "<script>alert('Login Successful'); window.location.href='traffic/trafficdash.html';</script>";
+                echo "<script>alert('Login Successful'); window.location.href='traffic/trafficdash.php';</script>";
             } else{
                 echo "<script>alert('Invalid Email or password'); window.location.href='login.html';</script>";
             }

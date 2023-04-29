@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
+<title>My Firebase app</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="mainTitle">My books</h1>
+        <div class="d-flex mb-2">
+            <input type="text" class="form-control" id="bookName" placeholder="Book name">
+            <select class="form-control mx-2 w-25" id="bookRating">
+                <option value="1">1/5</option>
+                <option value="2">2/5</option>
+                <option value="3">3/5</option>
+                <option value="4">4/5</option>
+                <option value="5">5/5</option>
+            </select>
+            <button type="button" class="btn btn-primary" id="addButton">Add</button>
+        </div>
+
+        <table class="table table-striped">
+            <tbody id="reviewList">
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script type="module">
+        // Import required Firebase services
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+        import {
+            Firestore,
+            getFirestore,
+            onSnapshot,
+            query,
+            collection,
+            orderBy,
+            addDoc
+        } from 'https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore.js'
+
+
+        // Your web app's Firebase configuration
+       // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyD_CAXCzYzfB5RRh9vMBIEk36b5e1Z4nAw",
+  authDomain: "cs022-2204974.firebaseapp.com",
+  projectId: "cs022-2204974",
+  storageBucket: "cs022-2204974.appspot.com",
+  messagingSenderId: "617051539979",
+  appId: "1:617051539979:web:9da53d656da8f5379d550e",
+  measurementId: "G-C0QQLY84HJ"
+};
+
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+
+        // Get a live data snapshot (i.e. auto-refresh) of our Reviews collection
+        const q = query(collection(db, "Reviews"), orderBy("book_name"));
+        const unsubscribe = onSnapshot(q, (snapshot) => {
+
+
+            // Empty HTML table
+            $('#reviewList').empty();
+
+            // Loop through snapshot data and add to HTML table
+            var tableRows = '';
+            snapshot.forEach((doc) => {
+                tableRows += '<tr>';
+                tableRows += '<td>' + doc.data().book_name + '</td>';
+                tableRows += '<td>' + doc.data().book_rating + '/5</td>';
+                tableRows += '<td>' + doc.data().review_date + '</td>';
+                tableRows += '</tr>';
+            });
+            $('#reviewList').append(tableRows);
+
+            // Display review count
+            $('#mainTitle').html(snapshot.size + " book reviews in the list");
+        });
+
+        // Add button pressed
+        $("#addButton").click(function () {
+
+            // Add review to Firestore collection
+            const docRef = addDoc(collection(db, "Reviews"), {
+                book_name: $("#bookName").val(),
+                book_rating: parseInt($("#bookRating").val()),
+                review_date: new Date().toLocaleDateString()
+
+            });
+
+            // Reset form
+            $("#bookName").val('');
+            $("#bookRating").val('1');
+        });
+
+
+    </script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>

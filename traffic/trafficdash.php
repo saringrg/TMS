@@ -62,20 +62,34 @@
       </div>
     </div>
     <div class="dropdown text-end px-5 mx-4">
-      <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        <img src="img/sachin.jpg" alt="profile" width="38" height="38" class="rounded-circle">
-      </a>
-      <ul class="dropdown-menu text-small">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-        <li><a class="dropdown-item" href="login.html">Sign out</a></li>
-      </ul>
-    </div>
+  <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    <img src="img/sachin.jpg" alt="profile" width="38" height="38" class="rounded-circle">
+  </a>
+  <ul class="dropdown-menu text-small">
+    <li>
+      <form class="px-4 py-3">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Name">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+      </form>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="login.html">Sign out</a></li>
+  </ul>
+</div>  
 
+    
+    
+    
+    
+    
+    
+    
   </nav>
 
   <div class="alert alert-primary justify-content-center text-center" role="alert">

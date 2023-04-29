@@ -92,18 +92,16 @@ td form {
                 <table>
       <tr>
         <th>ID</th>
-        <th>Full Name</th>
+        <th>Name</th>
         <th>Email</th>
         <th>Date</th>
-        <th>Vehicle Number</th>
         <th>License Number</th>
-        <th>Fine Category</th>
         <th>Fine Box</th>
-        <th>Location</th>
         <th>Traffic Station</th>
-        <th>Police Name</th>
-        <th>Notice</th>
         <th>Chit Number</th>
+        <th>Payment</th>
+        <th>Action</th>
+
 
       </tr>
       <?php
@@ -128,25 +126,19 @@ td form {
                     <td>" . $row["name"] . "</td>
                     <td>" . $row["email"] . "</td>
                     <td>" . $row["date"] . "</td>
-                    <td>" . $row["vehicle_number"] . "</td>
                     <td>" . $row["license_number"] . "</td>
-                    <td>" . $row["fine_category"] . "</td>
                     <td>" . $row["fine_box"] . "</td>
-                    <td>" . $row["location"] . "</td>
                     <td>" . $row["traffic_station"] . "</td>
-                    <td>" . $row["police_name"] . "</td>
-                    <td>" . $row["notice"] . "</td>
                     <td>" . $row["chit_number"] . "</td>
+                    <td>" . $row["payment"] . "</td>
+
                     <td>
                   <form method='post' action='update.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
                   </form>
                   
-                  <form method='post' action='del_echit.php'>
-                    <input type='hidden' name='id' value='" . $row["id"] . "'>
-                    <input type='submit' name='delete' value='Delete' class='delete-btn'>
-                  </form>
+                 
                     </td>
                   </tr>";
 
