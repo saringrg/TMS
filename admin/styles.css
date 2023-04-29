@@ -137,6 +137,8 @@ td {
 .container .header .nav .user img {
     width: 40px;
     height: 40px;
+    justify-content: right;
+    align-items: center;
 }
 .container .header .nav .user .img-case {
     position: relative;
