@@ -39,7 +39,7 @@
         }elseif ($stmt2_result->num_rows > 0) {
             $data = $stmt2_result->fetch_assoc();
             if($data['password'] === $password){
-                echo "<script>alert('Login Successful'); window.location.href='traffic/trafficdash.php';</script>";
+                echo "<script>alert('Login Successful'); window.location.href='traffic/trafficdash.html';</script>";
             } else{
                 echo "<script>alert('Invalid Email or password'); window.location.href='login.html';</script>";
             }
