@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-    <title>traffic details</title>
+    <title>user details</title>
     <style>
         .delete-btn, .update-btn {
   color: white;
@@ -46,7 +46,7 @@ td form {
             <img src="img/logo.jpg" class="rounded-circle" alt="logo" style="height:65px; border-radius: 50px;">&nbsp;
 
             <h1 class="tm">TMS</h1>
-        </div><br>
+        </div><br><br>
         <ul>
             <a href="index.php">
                 <li><img src="img/dashboard (2).png" alt="">&nbsp; <span>Dashboard</span> </li>
@@ -71,7 +71,7 @@ td form {
         <div class="header">
             <div class="nav">
                 <div class="search">
-                      
+                   
                 </div>
                 <div class="user">
                     <a href="#" class="bt"></a>
@@ -86,12 +86,12 @@ td form {
         <div class="content-2">
             <div class="recent-payments">
                 <div class="title">
-                    <h2>Traffic Details</h2>
-                    <a href="signup.html" class="btn1">Add Traffic</a>
+                    <h2 class="text" >User Details</h2>
+                    
                 </div>
-      <table>
+                <table>
       <tr>
-        <th>ID</th>
+        <th>SN</th>
         <th>Name</th>
         <th>Email</th>
         <th>Message</th>
@@ -105,7 +105,7 @@ td form {
           die("Connection failed: " . mysqli_connect_error());
         }
         
-        // Retrieve data from the "traffic" table
+        // Retrieve data from the "user" table
         $sql = "SELECT * FROM complain";
         $result = mysqli_query($conn, $sql);
         
