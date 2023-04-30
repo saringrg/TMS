@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style1.css">
-    <title>user details</title>
+    <title>Complain details</title>
     <style>
         .delete-btn, .update-btn {
   color: white;
@@ -86,7 +86,7 @@ td form {
         <div class="content-2">
             <div class="recent-payments">
                 <div class="title">
-                    <h2 class="text" >User Details</h2>
+                    <h2 class="text" >Complain Details</h2>
                     
                 </div>
                 <table>
