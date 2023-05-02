@@ -49,48 +49,7 @@
                 <div class="title">
                     <h2>Complain Box</h2>
                 </div>
-                <table>
-                    <tr>
-                        <th>SN</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Subject</th>
-                        <th>Message</th>
-                      </tr>
-                      <?php
-                        // Connect to MySQL database
-                        $conn = mysqli_connect("localhost", "root", "", "tms");
-                        
-                        // Check connection
-                        if (!$conn) {
-                          die("Connection failed: " . mysqli_connect_error());
-                        }
-                        
-                        // Retrieve data from the "traffic" table
-                        $sql = "SELECT * FROM complain";
-                        $result = mysqli_query($conn, $sql);
-                        
-                        // Display data in the table
-                        if (mysqli_num_rows($result) > 0) {
-                          while ($row = mysqli_fetch_assoc($result)) {
-                            // echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fullname"] . "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["batchnumber"] . "</td></tr>";
-                            echo "<tr>
-                                    <td>" . $row["id"] . "</td>
-                                    <td>" . $row["name"] . "</td>
-                                    <td>" . $row["email"] . "</td>
-                                    <td>" . $row["subject"] . "</td>
-                                    <td>" . $row["message"] . "</td>
-                                  </tr>";
-                
-                          }
-                        } else {
-                          echo "<tr><td colspan='5'>No traffic data available</td></tr>";
-                        }
-                        
-                        // Close MySQL database connection
-                        mysqli_close($conn);
-                      ?>
-                    </table>
+               
                             </div>
                         </div>
                     </div>
