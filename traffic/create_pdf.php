@@ -1,4 +1,6 @@
 <?php
+// Generate a six-digit code
+$chit_number = rand(100000, 999999);
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -18,6 +20,7 @@ $fine_box = $_POST['fine_box'];
 $location = $_POST['location'];
 $traffic_station = $_POST['traffic_station'];
 $police_name = $_POST['police_name'];
+$notice = $_POST['notice'];
 
 // Database connection
 $conn = new mysqli('localhost','root','','tms');
@@ -25,8 +28,8 @@ if($conn->connect_error){
     echo "$conn->connect_error";
     die("Connection Failed : ". $conn->connect_error);
 } else {
-    $stmt = $conn->prepare("insert into echit(name, email, date, vehicle_number, license_number, fine_category, fine_box, location, traffic_station, police_name) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssiisisss", $name, $email, $date, $vehicle_number, $license_number, $fine_category, $fine_box, $location, $traffic_station, $police_name);
+    $stmt = $conn->prepare("insert into echit(name, email, date, vehicle_number, license_number, fine_category, fine_box, location, traffic_station, police_name, notice, chit_number) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssisissssi", $name, $email, $date, $vehicle_number, $license_number, $fine_category, $fine_box, $location, $traffic_station, $police_name, $notice, $chit_number);
     $execval = $stmt->execute();
     $stmt->close();
     $conn->close();
@@ -53,12 +56,13 @@ $pdf->AddPage();
 $pdf->SetFont('Arial', 'B', 16);
 
 // Add the title to the document
-$pdf->Cell(0, 10, 'eChit', 0, 1, 'C');
+$pdf->Cell(0, 10, 'E-Chit', 0, 1, 'C');
 
 // Set the font for the document
 $pdf->SetFont('Arial', '', 12);
 
 // Add the form data to the document
+$pdf->Cell(0, 10, 'Chit Number: ' . $chit_number, 0, 1, 'R');
 $pdf->Cell(0, 10, 'Name: ' . $name, 0, 1);
 $pdf->Cell(0, 10, 'Email: ' . $email, 0, 1);
 $pdf->Cell(0, 10, 'Date: ' . $date, 0, 1);
@@ -69,6 +73,9 @@ $pdf->Cell(0, 10, 'Fine Box: ' . $fine_box, 0, 1);
 $pdf->Cell(0, 10, 'Location: ' . $location, 0, 1);
 $pdf->Cell(0, 10, 'Traffic Station: ' . $traffic_station, 0, 1);
 $pdf->Cell(0, 10, 'Police Name: ' . $police_name, 0, 1);
+$pdf->Cell(0, 10, 'Notice: ' . $notice, 0, 1);
+$pdf->Cell(0, 10, 'Please, write the specified chit number at the remarks section during the payment', 0, 0, 'C'); // print message centered
+
 
 // Output the PDF
 $pdf_data = $pdf->Output('S');
@@ -82,20 +89,20 @@ try {
     $mail->isSMTP();                                            // Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                       // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = '';                 // SMTP username
+    $mail->Username   = 'np03cs4a210050@heraldcollege.edu.np';                 // SMTP username
     $mail->Password   = '';                   // SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     //$mail->SMTPSecure = 'tls';                                  // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
     // Set the email content
-    $mail->setFrom('', 'TMS');
+    $mail->setFrom('np03cs4a210050@heraldcollege.edu.np', 'TMS');
     $mail->addAddress($email);
-    $mail->addStringAttachment($pdf_data, 'eChit.pdf');
+    $mail->addStringAttachment($pdf_data, 'E-Chit.pdf');
     $mail->isHTML(true);
     $mail->Subject = 'eChit details';
-    $mail->Body    = 'Please find attached eChit submitted by Traffic Management System';
-    $mail->AltBody = 'Please find attached eChit submitted by Traffic Management System';
+    $mail->Body    = 'Please find attached E-Chit submitted by Traffic Management System';
+    $mail->AltBody = 'Please find attached E-Chit submitted by Traffic Management System';
 
     // Send the email
     $mail->send();

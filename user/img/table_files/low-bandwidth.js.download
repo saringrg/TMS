@@ -1,0 +1,178 @@
+
+const homeCarousel = document.querySelector('.carousel-section')
+const homeReportSection = document.querySelector('.report-section')
+const homeMemberSection = Array.from($('.card .img-fluid'))
+const newsImage = document.querySelector('.news-image')
+const socialApps = document.querySelector('.socials-section .socials-app')
+const crimeChart = document.querySelector('.crime-section .crime-chart')
+const appSection = document.querySelector('.app-section')
+const footerMap = document.querySelector('.footer .row').children[3]
+const socialsImage = Array.from($('.socials-section .socials-image'))
+const newsPhoto = Array.from($('.news-photo'))
+const newsPhotoSmall = Array.from($('.news-photo_sm'))
+const shareButton = Array.from($('.button-share'))
+const maps = Array.from($('.embed-responsive'))
+// const icons = Array.from($("[class^='ic-'],[class*='ic-']"))
+const galleryImagebox = Array.from($('.gallery-item .imgbox'))
+const missingPageImage = Array.from($('.missing-section .avatar-id'))
+
+
+function toggle_bandwidth () {
+    let bandwidth = localStorage.getItem('bandwidth')
+    let highBandwidth = bandwidth === 'High' || bandwidth === null ? true:false
+    if (!highBandwidth) {
+      $('.bandwidthBtn').html('High Bandwidth')
+      if (homeCarousel) {
+        homeCarousel.style.display = 'none'
+      }
+      if (homeReportSection) {
+        homeReportSection.style.marginTop = '0'
+      }
+      if (homeMemberSection) {
+        homeMemberSection.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (newsImage) {
+        newsImage.style.display = 'none'
+      }
+      if (socialApps) {
+        socialApps.style.display = 'none'
+      }
+      if (crimeChart) {
+        crimeChart.style.display = 'none'
+      }
+      if (appSection) {
+        appSection.style.display = 'none'
+      }
+      if (footerMap) {
+        footerMap.style.display = 'none'
+      }
+      if (socialsImage) {
+        socialsImage.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (newsPhoto) {
+        newsPhoto.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (newsPhotoSmall) {
+        newsPhotoSmall.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (shareButton) {
+        shareButton.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (maps) {
+        maps.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (icons) {
+        icons.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (galleryImagebox) {
+        galleryImagebox.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+      if (missingPageImage) {
+        missingPageImage.forEach((children) => {
+          children.style.display = 'none'
+        })
+      }
+    } else {
+      $('.bandwidthBtn').html('Low Bandwidth')
+      if (homeCarousel) {
+        homeCarousel.style.display = 'block'
+      }
+      if (homeReportSection) {
+        homeReportSection.style.marginTop = '-3.5rem'
+      }
+      if (homeMemberSection) {
+        homeMemberSection.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (newsImage) {
+        newsImage.style.display = 'block'
+      }
+      if (socialApps) {
+        socialApps.style.display = 'flex'
+      }
+      if (crimeChart) {
+        crimeChart.style.display = 'block'
+      }
+      if (appSection) {
+        appSection.style.display = 'block'
+      }
+      if (footerMap) {
+        footerMap.style.display = 'block'
+      }
+      if (socialsImage) {
+        socialsImage.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (newsPhoto) {
+        newsPhoto.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (newsPhotoSmall) {
+        newsPhotoSmall.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (shareButton) {
+        shareButton.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (maps) {
+        maps.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (icons) {
+        icons.forEach((children) => {
+          children.style.display = 'inline-flex'
+        })
+      }
+      if (galleryImagebox) {
+        galleryImagebox.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+      if (missingPageImage) {
+        missingPageImage.forEach((children) => {
+          children.style.display = 'block'
+        })
+      }
+    }
+  }
+
+if ($('.bandwidthBtn')) {
+  console.log($('.bandwidthBtn').html())
+  $('.bandwidthBtn').on('click', function (){
+
+    let bandwidth = localStorage.getItem('bandwidth');
+    if(bandwidth === 'Low'){
+      localStorage.setItem('bandwidth', 'High')
+    }
+    else
+    {
+      localStorage.setItem('bandwidth', 'Low')
+    }
+    toggle_bandwidth()
+  })
+}
+    toggle_bandwidth()
+
