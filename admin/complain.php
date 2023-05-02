@@ -70,7 +70,22 @@
                         $sql = "SELECT * FROM complain";
                         $result = mysqli_query($conn, $sql);
                         
-                       
+                        // Display data in the table
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                              // echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fullname"] . "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["batchnumber"] . "</td></tr>";
+                              echo "<tr>
+                                      <td>" . $row["id"] . "</td>
+                                      <td>" . $row["name"] . "</td>
+                                      <td>" . $row["email"] . "</td>
+                                      <td>" . $row["subject"] . "</td>
+                                      <td>" . $row["message"] . "</td>
+                                    </tr>";
+                  
+                            }
+                          } else {
+                            echo "<tr><td colspan='5'>No traffic data available</td></tr>";
+                          }
                         
                         // Close MySQL database connection
                         mysqli_close($conn);
