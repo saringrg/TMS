@@ -49,7 +49,33 @@
                 <div class="title">
                     <h2>Complain Box</h2>
                 </div>
-               
+                <table>
+                    <tr>
+                        <th>SN</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                      </tr>
+                      <?php
+                        // Connect to MySQL database
+                        $conn = mysqli_connect("localhost", "root", "", "tms");
+                        
+                        // Check connection
+                        if (!$conn) {
+                          die("Connection failed: " . mysqli_connect_error());
+                        }
+                        
+                        // Retrieve data from the "traffic" table
+                        $sql = "SELECT * FROM complain";
+                        $result = mysqli_query($conn, $sql);
+                        
+                       
+                        
+                        // Close MySQL database connection
+                        mysqli_close($conn);
+                      ?>
+                    </table>
                             </div>
                         </div>
                     </div>
