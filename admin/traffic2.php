@@ -73,7 +73,7 @@ td form {
         <div class="header">
             <div class="nav">
             </div>
-        </div>l
+        </div>ly
 
         <div class="content-2">
             <div class="recent-payments">
