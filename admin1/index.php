@@ -28,13 +28,16 @@
                 <li><img src="img/user0.png" style="height:45px"alt="">&nbsp;<span>User</span> </li>
             </a>
             <a href="traffic2.php">
-                <li><img src="img/traffic.jpg"style="height:35px; width:40px" alt="">&nbsp;<span>Traffic</span> </li>
+                <li><img src="img/traffic2.jpg"style="height:40px; width:40px" alt="">&nbsp;<span>Traffic</span> </li>
             </a>
             <a href="echit.php">
                 <li><img src="img/table0.png" style="height:40px; width:40px" alt="">&nbsp;<span>E-chit</span> </li>
             </a>
-            <a href="#">
-                <li><img src="img/lo.png" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
+            <a href="complain.html">
+                    <li><img src="img/complain.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Complain</span> </li>
+                </a>
+            <a href="login.html">
+                <li><img src="img/log.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
             </a>
         </ul>
     </div>
@@ -42,15 +45,6 @@
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="se">   
-                </div>
-                <div class="user">
-                    <a href="#" class="bt"></a>
-
-                    <div class="img-case">
-                        <img src="img/user.png" alt="">
-                    </div>
-                </div>
             </div>
         </div>
 
