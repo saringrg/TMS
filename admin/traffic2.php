@@ -118,7 +118,7 @@ td form {
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
                   </form>
-                  
+                  r     [
                   <form method='post' action='del_traffic.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='delete' value='Delete' class='delete-btn'>

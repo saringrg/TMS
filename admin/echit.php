@@ -105,14 +105,13 @@ td form {
           die("Connection failed: " . mysqli_connect_error());
         }
         
-        // Retrieve data from the "traffic" table
+        // Retrieve data from the "echit" table and perform update operation
         $sql = "SELECT * FROM echit";
         $result = mysqli_query($conn, $sql);
         
         // Display data in the table
         if (mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
-            // echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fullname"] . "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["batchnumber"] . "</td></tr>";
             echo "<tr>
                     <td>" . $row["id"] . "</td>
                     <td>" . $row["name"] . "</td>
@@ -123,22 +122,17 @@ td form {
                     <td>" . $row["traffic_station"] . "</td>
                     <td>" . $row["chit_number"] . "</td>
                     <td>" . $row["payment"] . "</td>
-
                     <td>
                   <form method='post' action='edit_echit.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
-                  </form>
-                  
-                 
+                  </form>        
                     </td>
                   </tr>";
-
           }
         } else {
           echo "<tr><td colspan='5'>No traffic data available</td></tr>";
         }
-        
         // Close MySQL database connection
         mysqli_close($conn);
       ?>
