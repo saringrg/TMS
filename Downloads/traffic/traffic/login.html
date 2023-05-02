@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Custom CSS -->
+  <style type="text/css">
+    
+    .login-form {
+      width: 365px;
+      margin-top: 25px;
+      margin-left: 30px;
+      margin-right: 30px;
+      font-size: 15px;
+    }
+    .login-form form {
+      margin-bottom: 15px;
+      background: #fbfafa;
+      box-shadow: 0 2px 2px rgba(21, 21, 21, 0.3);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    .login-form h2 {
+      margin: 0 0 15px;
+    }
+
+    .form-control,
+    .btn {
+      min-height: 38px;
+      border-radius: 2px;
+    }
+
+    .btn {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .icon {
+
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    body {
+      background-image: url("https://trbahadurpur.com/wp-content/uploads/2021/01/background-5.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+ 
+  </style>
+</head>
+<body>
+  <div class="logo mt-4 ml-4">
+    <img src="logo.jpg" class="rounded-circle ms-3" alt="logo" style="height:100px;">
+  </div>
+
+  <div class="container-fluid h-custom ">
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <div class="col-md-9 col-lg-6 col-xl-5 mx-4">
+        <img src="https://myrepublica.nagariknetwork.com/uploads/media/traffic-police_20200321094134.jpg"
+        class="img-fluid" alt="Sample image" style="width: 1500px; height: 400px;border-radius: 10px;">
+    </div>
+      
+  
+  <div class="login-form">
+    <form class="login-form" action="login.php" method="post">
+      <h2 class="text-center mb-4"> <b> Login </b></h2> 
+      <div class="form-group">
+        <input type="email" name="email" class="form-control" placeholder="Email" required="required">
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </div>
+      <div class="clearfix">
+        <a href="resetpassword.html" class="float-left mb-4">Forgot Password?</a>
+      </div>
+      <p class="text-center">Don't have an account? <a href="signup.html">Register here</a></p>
+    </form>
+  </div>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
