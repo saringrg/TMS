@@ -43,43 +43,35 @@ td form {
 <body>
     <div class="side-menu">
         <div class="brand-name">
+        <a href="index.php">
             <img src="img/logo.jpg" class="rounded-circle" alt="logo" style="height:65px; border-radius: 50px;">&nbsp;
+            </a>
 
             <h1 class="tm">TMS</h1>
         </div><br><br>
         <ul>
             <a href="index.php">
-                <li><img src="img/dashboard (2).png" alt="">&nbsp; <span>Dashboard</span> </li>
+            <li> <img src="img/dashboard1.jpg" style="height:35px; width:40px" alt="">&nbsp; <span>Dashboard</span> </li>
             </a>
             <a href="user.php">
-                <li><img src="img/reading-book (1).png" alt="">&nbsp;<span>User</span> </li>
+                <li><img src="img/user0.png" style="height:45px"alt="">&nbsp;<span>User</span> </li>
             </a>
             <a href="traffic2.php">
-                <li><img src="img/teacher2.png" alt="">&nbsp;<span>Traffic</span> </li>
+                <li><img src="img/traffic2.jpg"style="height:40px; width:40px" alt="">&nbsp;<span>Traffic</span> </li>
             </a>
             <a href="echit.php">
-                <li><img src="img/school.png" alt="">&nbsp;<span>E-chit</span> </li>
+                <li><img src="img/table0.png" style="height:40px; width:40px" alt="">&nbsp;<span>E-chit</span> </li>
             </a>
-            <a href="#">
-                <li><img src="img/payment.png" alt="">&nbsp;<span>payment</span> </li>
-            </a>
-            <a href="#">
-                <li><img src="img/settings.png" alt="">&nbsp;<span>Settings</span> </li>
+            <a href="complain.php">
+                    <li><img src="img/complain.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Complain</span> </li>
+                </a>
+            <a href="login.html">
+                <li><img src="img/log.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
             </a>
     </div>
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                   
-                </div>
-                <div class="user">
-                    <a href="#" class="bt"></a>
-
-                    <div class="img-case">
-                        <img src="img/user.png" alt="">
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -90,7 +82,7 @@ td form {
                     
                 </div>
                 <table>
-      <tr>
+                <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Email</th>
