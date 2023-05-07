@@ -63,9 +63,13 @@
       </div>
     </div>
     <div class=" text-end px-5 mx-4">
-      <a href="login.html">
-        <button type="button" class="btn btn-danger btn-sm">Logout</button>
-      </a>
+      <button type="button" class="btn btn-danger btn-sm" id="myButton">Logout</button>
+      <script>
+        document.getElementById("myButton").addEventListener("click", function() {
+          window.location.href = "../login.html";
+        });
+      </script>     
+
     </div>
   </nav>
 

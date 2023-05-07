@@ -65,7 +65,7 @@ td form {
             <a href="complain.php">
                     <li><img src="img/complain.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Complain</span> </li>
                 </a>
-            <a href="login.html">
+            <a href="../login.html">
                 <li><img src="img/log.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
             </a>
     </div>
