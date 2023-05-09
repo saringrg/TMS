@@ -70,7 +70,7 @@ td form {
             </a>
     </div>
     <div class="container">
-        <div class="header"> gyt
+        <div class="header">
             <div class="nav">
             </div>
         </div>
