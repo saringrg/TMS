@@ -65,7 +65,7 @@ td form {
             <a href="complain.php">
                     <li><img src="img/complain.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Complain</span> </li>
                 </a>
-            <a href="login.html">
+            <a href="../login.html">
                 <li><img src="img/log.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
             </a>
     </div>
@@ -99,14 +99,13 @@ td form {
           die("Connection failed: " . mysqli_connect_error());
         }
         
-        // Retrieve data from the "traffic" table
+        // Retrieve data from the "traffic" table and perform update and delete operation
         $sql = "SELECT * FROM traffic";
         $result = mysqli_query($conn, $sql);
         
         // Display data in the table
         if (mysqli_num_rows($result) > 0) {
           while ($row = mysqli_fetch_assoc($result)) {
-            // echo "<tr><td>" . $row["id"] . "</td><td>" . $row["fullname"] . "</td><td>" . $row["email"] . "</td><td>" . $row["password"] . "</td><td>" . $row["batchnumber"] . "</td></tr>";
             echo "<tr>
                     <td>" . $row["id"] . "</td>
                     <td>" . $row["fullname"] . "</td>
@@ -114,6 +113,7 @@ td form {
                     <td>" . $row["password"] . "</td>
                     <td>" . $row["batchnumber"] . "</td>
                     <td>
+                    
                   <form method='post' action='edit_traffic.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
                     <input type='submit' name='update' value='Edit' class='update-btn'>
@@ -125,7 +125,6 @@ td form {
                   </form>
                     </td>
                   </tr>";
-
           }
         } else {
           echo "<tr><td colspan='5'>No traffic data available</td></tr>";
