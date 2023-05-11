@@ -35,10 +35,10 @@
                     $conn = mysqli_connect("localhost", "root", "", "tms");
 
                     // Retrieve data for the specific row
-                    // $id = mysqli_real_escape_string($conn, $_POST['id']);
-                    // $query = "SELECT * FROM echit WHERE id = '$id'";
-                    // $result = mysqli_query($conn, $query);
-                    // $row = mysqli_fetch_assoc($result);
+                    $id = mysqli_real_escape_string($conn, $_POST['id']);
+                    $query = "SELECT * FROM echit WHERE id = '$id'";
+                    $result = mysqli_query($conn, $query);
+                    $row = mysqli_fetch_assoc($result);
 
                     // Display the form with the retrieved data
                     if ($row) {
