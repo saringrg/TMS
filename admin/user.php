@@ -119,12 +119,12 @@ td form {
                     <td>" . $row["license"] . "</td>
                     <td>
                   
-                  <form method='post' action='del_user.php'>
-                    <input type='hidden' name='id' value='" . $row["id"] . "'>
-                    <input type='submit' name='delete' value='Delete' class='delete-btn'>
-                  </form>
-                    </td>
-                  </tr>";
+                  // <form method='post' action='del_user.php'>
+                  //   <input type='hidden' name='id' value='" . $row["id"] . "'>
+                  //   <input type='submit' name='delete' value='Delete' class='delete-btn'>
+                  // </form>
+                  //   </td>
+                  // </tr>";
 
           }
         } else {
