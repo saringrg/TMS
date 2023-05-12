@@ -11,7 +11,7 @@
 		echo "$conn->connect_error";
 		die("Connection Failed : ". $conn->connect_error);
 	} else {
-		$stmt = $conn->prepare("insert into user(fullname, email, password, license) values(?, ?, ?, ?)");
+		//$stmt = $conn->prepare("insert into user(fullname, email, password, license) values(?, ?, ?, ?)");
 		$stmt->bind_param("sssi", $fullname, $email, $password, $license);
 		$execval = $stmt->execute();
 		$stmt->close();
