@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 // Check if the form is submitted
 if (isset($_POST['submit'])) {
   // Connect to the database
@@ -32,4 +32,4 @@ if (isset($_POST['submit'])) {
   // Close the database connection
   mysqli_close($conn);
 }
-?>
+?> -->
