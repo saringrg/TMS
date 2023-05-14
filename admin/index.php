@@ -26,7 +26,7 @@
             </a>
             <a href="user.php">
                 <li><img src="img/user0.png" style="height:45px"alt="">&nbsp;<span>User</span> </li>
-            <!-- </a>
+            </a>
             <a href="traffic2.php">
                 <li><img src="img/traffic2.jpg"style="height:40px; width:40px" alt="">&nbsp;<span>Traffic</span> </li>
             </a>
@@ -40,7 +40,7 @@
                 <li><img src="img/log.jpg" style="height:40px; width:40px" alt="">&nbsp;<span>Logout</span> </li>
             </a>
         </ul>
-    </div> --t>
+    </div>
 
     <div class="container">
         <div class="header">
