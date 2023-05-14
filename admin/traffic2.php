@@ -112,7 +112,7 @@ td form {
                     <td>" . $row["fullname"] . "</td>
                     <td>" . $row["email"] . "</td>
                     <td>" . $row["password"] . "</td>
-                    <td>" . $row["batchnumber"] . "</td>
+                   // <td>" . $row["batchnumber"] . "</td>
                     <td>
                   <form method='post' action='edit_traffic.php'>
                     <input type='hidden' name='id' value='" . $row["id"] . "'>
