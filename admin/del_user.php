@@ -4,7 +4,7 @@ $conn = mysqli_connect("localhost", "root", "", "tms");
 
 // Check connection
 if (!$conn) {
- // die("Connection failed: " . mysqli_connect_error());
+  die("Connection failed: " . mysqli_connect_error());
 }
 
 // Check if the ID parameter is set
